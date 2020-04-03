@@ -1,26 +1,26 @@
 clc;
 clear;
 
-%ï¿½ï¿½ï¿½ï¿½ï¿½È¡150ï¿½ï¿½ï¿½ï¿½
+%Ëæ»ú»ñÈ¡150¸öµã
 X = [randn(50,3)+ones(50,3);randn(50,3)-ones(50,3);randn(50,3)];
  
-%ï¿½ï¿½ï¿½ï¿½Kmeansï¿½ï¿½ï¿½ï¿½
-%X N*Pï¿½ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ï¿½ï¿½
-%Idx N*1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½
-%Ctrs K*Pï¿½Ä¾ï¿½ï¿½ï¿½,ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½Kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
-%SumD 1*Kï¿½Äºï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½
-%D N*Kï¿½Ä¾ï¿½ï¿½ó£¬´æ´¢ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÄµÄ¾ï¿½ï¿½ï¿½;
+%µ÷ÓÃKmeansº¯Êý
+%X N*PµÄÊý¾Ý¾ØÕó
+%Idx N*1µÄÏòÁ¿,´æ´¢µÄÊÇÃ¿¸öµãµÄ¾ÛÀà±êºÅ
+%Ctrs K*PµÄ¾ØÕó,´æ´¢µÄÊÇK¸ö¾ÛÀàÖÊÐÄÎ»ÖÃ
+%SumD 1*KµÄºÍÏòÁ¿,´æ´¢µÄÊÇÀà¼äËùÓÐµãÓë¸ÃÀàÖÊÐÄµã¾àÀëÖ®ºÍ
+%D N*KµÄ¾ØÕó£¬´æ´¢µÄÊÇÃ¿¸öµãÓëËùÓÐÖÊÐÄµÄ¾àÀë;
  
 [Idx,Ctrs,SumD,D] = kmeans(X,3);
  
-%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª1ï¿½Äµã¡£X(Idx==1,1),Îªï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ê£»X(Idx==1,2)Îªï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÄµÚ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+%»­³ö¾ÛÀàÎª1µÄµã¡£X(Idx==1,1),ÎªµÚÒ»ÀàµÄÑù±¾µÄµÚÒ»¸ö×ø±ê£»X(Idx==1,2)ÎªµÚ¶þÀàµÄÑù±¾µÄµÚ¶þ¸ö×ø±ê
 plot3(X(Idx==1,1),X(Idx==1,2),X(Idx==1,3),'r.','MarkerSize',14)
 hold on
 plot3(X(Idx==2,1),X(Idx==2,2),X(Idx==2,3),'b.','MarkerSize',14)
 hold on
 plot3(X(Idx==3,1),X(Idx==3,2),X(Idx==3,3),'g.','MarkerSize',14)
  
-%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½,kxï¿½ï¿½Ê¾ï¿½ï¿½Ô²ï¿½ï¿½
+%»æ³ö¾ÛÀàÖÐÐÄµã,kx±íÊ¾ÊÇÔ²ÐÎ
 plot3(Ctrs(:,1),Ctrs(:,2),Ctrs(:,3),'kx','MarkerSize',14,'LineWidth',4)
 plot3(Ctrs(:,1),Ctrs(:,2),Ctrs(:,3),'kx','MarkerSize',14,'LineWidth',4)
 plot3(Ctrs(:,1),Ctrs(:,2),Ctrs(:,3),'kx','MarkerSize',14,'LineWidth',4)
